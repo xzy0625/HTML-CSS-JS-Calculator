@@ -1,0 +1,141 @@
+<!--
+ * @Author: CSU_XZY
+ * @Date: 2020-10-15 21:17:33
+ * @LastEditors: CSU_XZY
+ * @LastEditTime: 2020-10-16 22:07:08
+ * @FilePath: \第二天\计算器\compute.html
+ * @Description: just to play
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计算器</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        background-color: #FCFDFE;
+    }
+    .container{
+        overflow: hidden;
+        box-shadow: 0 0 3px 0 rgba(0, 0, 0, .3);
+        margin: 150px auto;
+        width: 548px;
+        height: 274px;
+        background-color: #fff;
+    }
+    .box{
+        background-color: #fcfdff;
+        margin: 15px auto;
+        overflow: hidden;
+        width: 514px;
+        height: 244px;
+    }
+    .number{
+        width: 514px;
+        height: 189px;
+    }
+    .text{
+        width: 514px;
+        height: 55px;
+        margin: 0;
+    }
+    span{
+        border-top: solid 1px #ebebeb;
+        border-right: solid 1px #ebebeb;
+        box-sizing: border-box;
+        float: left;
+        display: block;
+        width: 25%;
+        font-size: 16px;
+        color: #333;
+        background-color: #fff;
+        line-height: 37px;
+        cursor: pointer;
+        text-align: center;
+        font-weight: 10px;
+    }
+    span:hover{
+        background-color: #d3d7d4;
+    }
+    span:active{
+        background-color: #afdfe4;
+        
+    }
+    
+    .text>p{
+        text-align: right;
+        width: 514px;
+        height: 24px;
+        line-height: 25px;
+        font-size: 25px;
+    }
+    .number>div{
+        width: 514px;
+        height: 37.8px;
+    }
+    .around{
+        background-color: #f9f9f9;
+        color: #f60;
+    }
+    .compute{
+        color: #333;
+    }
+    .bottom{
+        background-color: #fff;
+        color: #f60;
+    }
+    .dot{
+        font-size: 23px; 
+        font-weight: 19px;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="text">
+                <p id="text"></p>
+                <p id="display"></p>
+            </div>
+            <div class="number">
+                <div class="around">
+                    <span onclick="showDetails(this)" data-value="(" class="around">(</span>
+                    <span onclick="showDetails(this)" data-value=")" class="around">)</span>
+                    <span onclick="showDetails(this)" data-value="D" title="回退一位数" class="around">del</span>
+                    <span onclick="showDetails(this)" data-value="C" class="around compute">C</span>
+                </div>
+                <div>
+                    <span onclick="showDetails(this)" data-value="7">7</span>
+                    <span onclick="showDetails(this)" data-value="8">8</span>
+                    <span onclick="showDetails(this)" data-value="9">9</span>
+                    <span onclick="showDetails(this)" data-value="÷" class="around">÷</span>
+                </div>
+                <div>
+                    <span onclick="showDetails(this)" data-value="4">4</span>
+                    <span onclick="showDetails(this)" data-value="5">5</span>
+                    <span onclick="showDetails(this)" data-value="6">6</span>
+                    <span onclick="showDetails(this)" data-value="x" class="around">x</span>
+                </div>
+                <div>
+                    <span onclick="showDetails(this)" data-value="1">1</span>
+                    <span onclick="showDetails(this)" data-value="2">2</span>
+                    <span onclick="showDetails(this)" data-value="3">3</span>
+                    <span onclick="showDetails(this)" data-value="-" class="around">-</span>
+                </div>
+                <div>
+                    <span onclick="showDetails(this)" data-value="0">0</span>
+                    <span onclick="showDetails(this)" data-value="." class="around bottom dot">.</span>
+                    <span onclick="showDetails(this)" data-value="=" class="around bottom">=</span>
+                    <span onclick="showDetails(this)" data-value="+" class="around">+</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="compute.js"></script>
+</html>
